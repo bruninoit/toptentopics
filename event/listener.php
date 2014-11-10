@@ -10,14 +10,18 @@ protected $search_engines;
 protected $template;
 protected $auth;
 protected $user;
+protected $root_path;
+protected $phpEx;
 
-public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) {
-	$this->db = $db;
-	$this->template = $template; 
-	$this->auth = $auth;
-	$this->user = $user;
-    $this->phpEx = $phpEx;
 
+public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
+{
+   $this->db = $db;
+   $this->template = $template; 
+   $this->auth = $auth;
+   $this->user = $user;
+   $this->root_path = $root_path;
+   $this->phpEx   = $phpEx ;
 }
 
 static public function getSubscribedEvents()	{		return array(			'core.user_setup'						=> 'setup',					);	}	
