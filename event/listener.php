@@ -56,7 +56,7 @@ $result1 = $this->db->sql_query($sql1);
 				}else{
 				$topic_title1 = $row1['topic_title'];
 				}
-			$last_topic_link[$n1]   		= append_sid("{$phpbb_root_path}viewtopic.php", "f=" . $row1['forum_id'] . "&amp;t=" . $row1['topic_id']);
+			$last_topic_link[$n1]   		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "f=" . $row1['forum_id'] . "&amp;t=" . $row1['topic_id']);
             $last_topic_title[$n1]  		= $row1['topic_title'];
 			$last_topic_title_short[$n1]  	= $topic_title1;
 			$last_topic_forum[$n1]  		= $row1['forum_name'];
@@ -92,7 +92,7 @@ $result2 = $this->db->sql_query($sql2);
 				}else{
 				$topic_title2 = $row2['topic_title'];
 				}
-			$view_topic_link[$n2]   		= append_sid("{$phpbb_root_path}viewtopic.php", "f=" . $row2['forum_id'] . "&amp;t=" . $row2['topic_id']);
+			$view_topic_link[$n2]   		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "f=" . $row2['forum_id'] . "&amp;t=" . $row2['topic_id']);
 			$view_topic_title[$n2]			= $row2['topic_title'];
 			$view_topic_title_short[$n2]  	= $topic_title2;	
 			$view_topic_forum[$n2]  		= $row2['forum_name'];		
@@ -129,7 +129,7 @@ $result4 = $this->db->sql_query($sql4);
 				}else{
 				$post_title = $post_subject ;
 				}
-			$last_post_link[$n4]		= append_sid("{$phpbb_root_path}viewtopic.php", "f=" . $row4['forum_id'] . "&amp;t=" . $row4['topic_id'] . "#p" . $row4['topic_last_post_id']);
+			$last_post_link[$n4]		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "f=" . $row4['forum_id'] . "&amp;t=" . $row4['topic_id'] . "#p" . $row4['topic_last_post_id']);
 			//$last_post_link[$n4]   		= append_sid("{$phpbb_root_path}viewtopic.$phpEx", "f=" . $row4['forum_id'] . "&amp;t=" . $row4['topic_id'] . "p#" . $row4['topic_last_post_id']);
 			$last_post_title[$n4] 		= $row4['topic_last_post_subject'];
 			$last_post_title_short[$n4] = $post_title;
