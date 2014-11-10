@@ -6,12 +6,6 @@ services:
             - @template
             - @auth
             - @user
-            - @cache
-            - @config
-            - @content.visibility
-            - @dispatcher
-            - @pagination
-            - @request
             - %core.root_path%
             - %core.php_ext%
         tags:
