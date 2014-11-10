@@ -1,0 +1,16 @@
+services:
+    phpbbitalia.topten.listener:
+        class: phpbbitalia\toptentopics\event\listener
+        arguments:
+            - @dbal.conn
+            - @template
+            - @auth
+            - @user
+            - @cache
+            - @config
+            - @content.visibility
+            - @dispatcher
+            - @pagination
+            - @request
+        tags:
+            - { name: event.listener }
