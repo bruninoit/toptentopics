@@ -1,5 +1,5 @@
 <?php
-namespace phpbbitalia\toptentopics\event;
+namespace staffit\toptentopics\event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class listener implements
 EventSubscriberInterface{
@@ -29,7 +29,7 @@ public function setup($event)	{
 //codice start
  // MOD Topten Topics : Topics più recenti, Topics più visti e Posts più recenti 
 // created by Micogian (Bingo)
-//estensione by Brunino
+//estensione by Brunino e Carlo
 // configurazione: numero dei recods da visualizzare nella Lista
 $list_rec = 20 ;   // numero di records da estrarre dalla tabella (alcuni topics potrebbero non aver il permesso di lettura)
 $list_view = 10 ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
