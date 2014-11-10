@@ -4,9 +4,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class listener implements
 EventSubscriberInterface{
 protected $db;
-protected $table_prefix;
-protected $request;
-protected $search_engines;
+//protected $table_prefix;
+//protected $request;
+//protected $search_engines;
 protected $template;
 protected $auth;
 protected $user;
