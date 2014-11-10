@@ -1,5 +1,5 @@
 {
-    "name": "phpbbitalia/toptentopics",
+    "name": "staffit/toptentopics",
     "type": "phpbb-extension",
     "description": "Aggiunge un box nell'indice con ultimi topic, topic più visti e ultimi post",
     "homepage": "https://brunino.altervista.org",
