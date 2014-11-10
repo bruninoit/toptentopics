@@ -9,26 +9,25 @@
     "authors": [
         {
             "name": "brunino",
-            "email": "",
+            "email": "brunino@altervista.org",
             "homepage": "http://www.brunino.altervista.org",
             "role": "Developer"
         },
  {
             "name": "Carlo",
-            "email": "",
+            "email": "carlo@phpbbitalia.net",
             "homepage": "http://www.phpbbitalia.net",
             "role": "Helper"
         }, 
         {
             "name": "Micogian",
-            "email": "",
-            "homepage": "",
+            "email": "giannidose@tin.it",
+            "homepage": "http://www.actafungorum.org/actaforum/",
             "role": "Previous Developer"
         }
     ],
     "require": {
-        "php": ">=5.3",
-        "composer/installers": "~1.0"
+        "php": ">=5.3"
     },
     "extra": {
         "display-name": "Top Ten Topics",
@@ -37,7 +36,7 @@
         },
         "version-check": {
             "host": "brunino.altervista.org",
-            "directory": "/version",
+            "directory": "/version/",
             "filename": "toptentopics.json"
         }
     }
