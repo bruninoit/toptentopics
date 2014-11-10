@@ -65,7 +65,7 @@ $result1 = $this->db->sql_query($sql1);
  $last_topic_data[$n1]   		= date("d/m",$row1['topic_time']); 
 			++$n1 ;          	
             }else{
-			break ;p
+			break ;
 			}
         }
     }
