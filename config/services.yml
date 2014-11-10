@@ -1,6 +1,6 @@
 services:
     phpbbitalia.topten.listener:
-        class: phpbbitalia\toptentopics\event\listener
+        class: staffit\toptentopics\event\listener
         arguments:
             - @dbal.conn
             - @template
