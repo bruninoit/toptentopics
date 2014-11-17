@@ -24,8 +24,22 @@ public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\templa
    $this->phpEx   = $phpEx ;
 }
 
-static public function getSubscribedEvents()	{		return array(			'core.user_setup'						=> 'setup',					);	}	
-public function setup($event)	{		
+static public function getSubscribedEvents()	
+{
+return array(			
+'core.user_setup'						=> 'setup',	
+);	
+}	
+public function setup($event)	{	
+//file di lingua
+$lang_set_ext = $event['lang_set_ext'];
+		$lang_set_ext[] = array(
+			'ext_name' => 'staffit/toptentopics',
+			'lang_set' => 'common',
+		);
+		$event['lang_set_ext'] = $lang_set_ext;
+//lingua end
+
 //codice start
  // MOD Topten Topics : Topics più recenti, Topics più visti e Posts più recenti 
 // created by Micogian (Bingo)
@@ -41,6 +55,7 @@ $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topi
     WHERE tt.topic_type = 0
     AND tt.topic_moved_id = 0
     AND tt.forum_id = ft.forum_id
+    AND tt.topic_visibility=1
     ORDER BY tt.topic_time DESC LIMIT 0,$list_rec";
 $result1 = $this->db->sql_query($sql1);
     $n1 = 0;
@@ -56,7 +71,7 @@ $result1 = $this->db->sql_query($sql1);
 				}else{
 				$topic_title1 = $row1['topic_title'];
 				}
-			$last_topic_link[$n1]   		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "f=" . $row1['forum_id'] . "&amp;t=" . $row1['topic_id']);
+			$last_topic_link[$n1]   		= append_sid("{$this->root_path}viewtopic.{$this->phpEx}", "f=" . $row1['forum_id'] . "&amp;t=" . $row1['topic_id']);
             $last_topic_title[$n1]  		= $row1['topic_title'];
 			$last_topic_title_short[$n1]  	= $topic_title1;
 			$last_topic_forum[$n1]  		= $row1['forum_name'];
@@ -67,6 +82,7 @@ $result1 = $this->db->sql_query($sql1);
             }else{
 			break ;
 			}
+            
         }
     }
 //---------- 10 Topics più Recenti end -----------//
@@ -92,7 +108,7 @@ $result2 = $this->db->sql_query($sql2);
 				}else{
 				$topic_title2 = $row2['topic_title'];
 				}
-			$view_topic_link[$n2]   		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "f=" . $row2['forum_id'] . "&amp;t=" . $row2['topic_id']);
+			$view_topic_link[$n2]   		= append_sid("{$this->root_path}viewtopic.{$this->phpEx}", "f=" . $row2['forum_id'] . "&amp;t=" . $row2['topic_id']);
 			$view_topic_title[$n2]			= $row2['topic_title'];
 			$view_topic_title_short[$n2]  	= $topic_title2;	
 			$view_topic_forum[$n2]  		= $row2['forum_name'];		
@@ -113,6 +129,7 @@ $sql4 = "SELECT tt.topic_id, tt.forum_id, tt.topic_moved_id, tt.topic_last_post_
     WHERE tt.topic_type = 0
     AND tt.topic_moved_id = 0
     AND tt.forum_id = ft.forum_id
+    AND tt.topic_visibility=1
     ORDER BY tt.topic_last_post_time DESC LIMIT 0,$list_rec";
 $result4 = $this->db->sql_query($sql4);
     $n4 = 0;
