@@ -15,7 +15,7 @@ protected $root_path;
 protected $phpEx;
 
 
-public function __construct(\phpbb\config\config $db, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
+public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
 {
    $this->config = $config;
    $this->db = $db;
