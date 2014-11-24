@@ -3,6 +3,7 @@ namespace staffit\toptentopics\event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class listener implements
 EventSubscriberInterface{
+protected $config;
 protected $db;
 //protected $table_prefix;
 //protected $request;
@@ -14,8 +15,9 @@ protected $root_path;
 protected $phpEx;
 
 
-public function __construct(\phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
+public function __construct(\phpbb\config\config $db, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
 {
+   $this->config = $config;
    $this->db = $db;
    $this->template = $template; 
    $this->auth = $auth;
@@ -159,6 +161,10 @@ $result4 = $this->db->sql_query($sql4);
         }
     }
 //---------- 10 Ultimi posts end -----------//
+
+//posizione top ten topic
+$config=$this->config['toptentopics'];
+$this->template->assign_var('POSITION', $config);
 
 // Crea l'array "topten_list" che contiene le Variabili per il Template
 for ($x = 0; $x < $list_view; ++$x)
