@@ -23,7 +23,7 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 				'acp',
 				'ACP_TTT_TITLE',
 				array(
-					'module_basename'	=> '\astaffit\toptentopics\acp\main_module',
+					'module_basename'	=> '\staffit\toptentopics\acp\main_module',
 					'modes'				=> array('settings'),
 				),
 			)),
