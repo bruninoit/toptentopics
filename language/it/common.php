@@ -17,4 +17,5 @@ $lang = array_merge($lang, array(
 	'ACP_SETTING_INFO'		=> 'Scegli la posizione del box nell&apos;indice',
 	'BEFORE_FORUMLIST'		=> 'Prima della lista dei forum',
 	'AFTER_FORUMLIST'		=> 'Dopo la lista dei forum',
+	'ACP_TTT_SAVED'			=> 'Impostazioni della Top Ten Topics aggiornate'
 ));
