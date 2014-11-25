@@ -48,7 +48,7 @@ $lang_set_ext = $event['lang_set_ext'];
 //estensione by Brunino e Carlo
 // configurazione: numero dei recods da visualizzare nella Lista
 $list_rec = 20 ;   // numero di records da estrarre dalla tabella (alcuni topics potrebbero non aver il permesso di lettura)
-$list_view = 10 ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
+$list_view = $config['toptentopics_number'] ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
 
 //---------- 10 Topics più Recenti start -----------//
 $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topic_moved_id, tt.topic_first_poster_name,
