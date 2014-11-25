@@ -7,9 +7,10 @@
 		<dl>
 			<dt><label for="toptentopics">{L_ACP_SETTING_INFO}</label></dt>
 			<dd><input type="radio" class="radio" name="toptentopics_position" value="1" <!-- IF ACP_POSITION -->checked="checked"<!-- ENDIF -->/> {L_BEFORE_FORUMLIST} &nbsp;
-				<input type="radio" class="radio" name="toptentopics_position" value="0" <!-- IF not ACP_POSITION -->checked="checked"<!-- ENDIF --> /> {L_AFTER_FORUMLIST}</dd>
+			    <input type="radio" class="radio" name="toptentopics_position" value="0" <!-- IF not ACP_POSITION -->checked="checked"<!-- ENDIF --> /> {L_AFTER_FORUMLIST}</dd>
+		
+			<dd><input type="text" class="text" name="toptentopics_number" value={ACP_NUMBER} /></dd>
 		</dl>
-
 		<p class="submit-buttons">
 			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
 			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
