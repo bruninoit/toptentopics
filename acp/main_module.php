@@ -17,7 +17,7 @@ class main_module
 			{
 				trigger_error('FORM_INVALID');
 			}
-			$config->set('toptentopics', $request->variable('toptentopics', 0));
+			$config->set('toptentopics_position', $request->variable('toptentopics_position', 0));
 			trigger_error($user->lang('ACP_TTT_SAVED') . adm_back_link($this->u_action));
 		}
 		$template->assign_vars(array(
