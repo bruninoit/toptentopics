@@ -9,7 +9,7 @@ class main_info
 			'title'		=> 'ACP_TTT_TITLE',
 			'version'	=> '0.1.0-b2',
 			'modes'		=> array(
-				'settings'	=> array('title' => 'ACP_TTT_TITLE', 'auth' => 'staffit/toptentopics && acl_a_board', 'cat' => array('ACP_TTT_TITLE')),
+				'settings'	=> array('title' => 'ACP_TTT_TITLE', 'auth' => 'ext_staffit/toptentopics && acl_a_board', 'cat' => array('ACP_TTT_TITLE')),
 			),
 		);
 	}
