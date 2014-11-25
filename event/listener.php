@@ -163,8 +163,10 @@ $result4 = $this->db->sql_query($sql4);
 //---------- 10 Ultimi posts end -----------//
 
 //posizione top ten topic
-$config=$this->config['toptentopics'];
-$this->template->assign_var('POSITION', $config);
+$config_position=$this->config['toptentopics_position'];
+$config_guest=$this->config['toptentopics_guest']
+$this->template->assign_var('POSITION', $config_position);
+$this->template->assign_var('TTT_GUEST', $config_guest)
 
 // Crea l'array "topten_list" che contiene le Variabili per il Template
 for ($x = 0; $x < $list_view; ++$x)
