@@ -19,12 +19,14 @@ class main_module
 			}
 			$config->set('toptentopics_number', $request->variable('toptentopics_number', 0));
 			$config->set('toptentopics_position', $request->variable('toptentopics_position', 0));
+			$config->set('toptentopics_guest', $request->variable('toptentopics_guest', 0));
 			trigger_error($user->lang('ACP_TTT_SAVED') . adm_back_link($this->u_action));
 		}
 		$template->assign_vars(array(
 			'U_ACTION'				=> $this->u_action,
 			'ACP_POSITION'				=> $config['toptentopics_position'],
-			'ACP_NUMBER'				=> $config['toptentopics_number']
+			'ACP_NUMBER'				=> $config['toptentopics_number'],
+			'ACP_GUEST'				=> $config['toptentopics_guest']
 		));
 	}
 }
