@@ -14,6 +14,8 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 	{
 		return array(
 			array('config.add', array('toptentopics_position', 0)),
+			array('config.add', array('toptentopics_number', 10)),
+			array('config.add', array('toptentopics_guest', 1)),
 			array('module.add', array(
 				'acp',
 				'ACP_CAT_DOT_MODS',
