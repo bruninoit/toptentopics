@@ -4,7 +4,7 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['toptentopics']);
+		return isset($this->config['toptentopics_guest']);
 	}
 	static public function depends_on()
 	{
@@ -26,7 +26,6 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 				'ACP_TTT_TITLE',
 				array(
 					'module_basename'	=> '\staffit\toptentopics\acp\main_module',
-					'modes'				=> array('settings'),
 				),
 			)),
 		);
