@@ -19,7 +19,7 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 			array('module.add', array(
 				'acp',
 				'ACP_CAT_DOT_MODS',
-				'ACP_TTT_CATEGORY'
+				'ACP_TTT_CATEGORY',
 			)),
 			array('module.add', array(
 				'acp',
