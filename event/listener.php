@@ -47,8 +47,8 @@ $lang_set_ext = $event['lang_set_ext'];
 // created by Micogian (Bingo)
 //estensione by Brunino e Carlo
 // configurazione: numero dei recods da visualizzare nella Lista
-$list_rec = 20 ;   // numero di records da estrarre dalla tabella (alcuni topics potrebbero non aver il permesso di lettura)
-$list_view = $config['toptentopics_number'] ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
+$list_rec = $this->config['toptentopics_number'] + 15 ;   // numero di records da estrarre dalla tabella (alcuni topics potrebbero non aver il permesso di lettura)
+$list_view = $this->config['toptentopics_number'] ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
 
 //---------- 10 Topics più Recenti start -----------//
 $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topic_moved_id, tt.topic_first_poster_name,
@@ -164,9 +164,9 @@ $result4 = $this->db->sql_query($sql4);
 
 //posizione top ten topic
 $config_position=$this->config['toptentopics_position'];
-$config_guest=$this->config['toptentopics_guest']
+$config_guest=$this->config['toptentopics_guest'];
 $this->template->assign_var('POSITION', $config_position);
-$this->template->assign_var('TTT_GUEST', $config_guest)
+$this->template->assign_var('TTT_GUEST', $config_guest);
 
 // Crea l'array "topten_list" che contiene le Variabili per il Template
 for ($x = 0; $x < $list_view; ++$x)
