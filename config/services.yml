@@ -1,5 +1,5 @@
 services:
-    phpbbitalia.topten.listener:
+    staffit.toptentopics.listener:
         class: staffit\toptentopics\event\listener
         arguments:
             - @config
