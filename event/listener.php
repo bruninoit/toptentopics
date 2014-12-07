@@ -127,6 +127,8 @@ $result1 = $this->db->sql_query($sql1);
 $data_cor = time() ; // timestamp data corrente
 $data_6 = ($data_cor - 15811200) ;  // timestamp di 182 giorni fa
 $data_12 = ($data_cor - 31536000) ; // timestamp di 365 giorni fa
+$data_3 = ($data_cor - 7905600) ;
+$data_1 = ($data_cor - 2635200) ;
 
 //$data_views = $_POST['sel_views'] ; // opzione selezionata
 $data_views = request_var('sel_views', 0);
@@ -145,6 +147,16 @@ if ($data_views == '2')
 {
 $this->template->assign_var('TIME_SELECTED', '2');
 $data_ini = $data_12 ;
+}
+if ($data_views == '4')
+{
+$this->template->assign_var('TIME_SELECTED', '4');
+$data_ini = $data_3 ;
+}
+if ($data_views == '5')
+{
+$this->template->assign_var('TIME_SELECTED', '5');
+$data_ini = $data_1 ;
 }
 // fine modifica Modifica periodo di valutazione
 
