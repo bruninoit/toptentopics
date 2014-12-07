@@ -20,6 +20,6 @@ $lang = array_merge($lang, array(
 	'ACP_NUMBER'		=> 'Numero di topic e post estratti',
 	'BEFORE_FORUMLIST'		=> 'Prima della lista dei forum ma dopo il link "segna come gi&agrave; letti"',
 	'AFTER_FORUMLIST'		=> 'Dopo la lista dei forum',
-	'L_AFTER_MARKFORUM'		=> 'Prima della lista dei forum e del link "segna come gi&agrave; letti"',
+	'AFTER_MARKFORUM'		=> 'Prima della lista dei forum e del link "segna come gi&agrave; letti"',
 	'ACP_TTT_SAVED'			=> 'Impostazioni della Top Ten Topics aggiornate'
 ));
