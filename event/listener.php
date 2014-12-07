@@ -50,6 +50,38 @@ $lang_set_ext = $event['lang_set_ext'];
 $list_rec = $this->config['toptentopics_number'] + 15 ;   // numero di records da estrarre dalla tabella (alcuni topics potrebbero non aver il permesso di lettura)
 $list_view = $this->config['toptentopics_number'] ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
 
+//funzione taglia stringa
+function TagliaStringa($stringa, $max_char){
+        if(strlen($stringa)>$max_char){
+            $stringa_tagliata=substr($stringa, 0,$max_char);
+            $last_space=strrpos($stringa_tagliata," ");
+            $stringa_ok=substr($stringa_tagliata, 0,$last_space);
+            return $stringa_ok."...";
+        }else{
+            return $stringa;
+        }
+    }
+    
+    
+//funzione mesi
+function mod_data($data_cor)
+{
+$data_cor = str_replace("Jan","gen", $data_cor);
+$data_cor = str_replace("Feb","feb", $data_cor);
+$data_cor = str_replace("Mar","mar", $data_cor);
+$data_cor = str_replace("Apr","apr", $data_cor);
+$data_cor = str_replace("May","mag", $data_cor);
+$data_cor = str_replace("Jun","giu", $data_cor);
+$data_cor = str_replace("Jul","lug", $data_cor);
+$data_cor = str_replace("Aug","ago", $data_cor);
+$data_cor = str_replace("Sep","set", $data_cor);
+$data_cor = str_replace("Oct","ott", $data_cor);
+$data_cor = str_replace("Nov","nov", $data_cor);
+$data_cor = str_replace('Dec','dic', $data_cor);
+return $data_cor;
+}
+
+
 //---------- 10 Topics più Recenti start -----------//
 $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topic_moved_id, tt.topic_first_poster_name,
     ft.forum_id, ft.forum_name
@@ -91,10 +123,36 @@ $result1 = $this->db->sql_query($sql1);
 
 //---------- 10 Topics più Visti start -----------//
 
+// modifica Mod: inserisce la selezione del periodo di valutazione
+$data_cor = time() ; // timestamp data corrente
+$data_6 = ($data_cor - 15811200) ;  // timestamp di 182 giorni fa
+$data_12 = ($data_cor - 31536000) ; // timestamp di 365 giorni fa
+
+$data_views = $_POST['sel_views'] ; // opzione selezionata
+
+// assegnazione dell'opzione scelta, per default è Tutto
+if ($data_views == '' || $data_views == '3')
+{
+$this->template->assign_var('TIME_SELECTED', '3');
+$data_ini = '0' ;
+}
+if ($data_views == '1' )
+{
+$this->template->assign_var('TIME_SELECTED', '1');
+$data_ini = $data_6 ;
+}
+if ($data_views == '2')
+{
+$this->template->assign_var('TIME_SELECTED', '2');
+$data_ini = $data_12 ;
+}
+// fine modifica Modifica periodo di valutazione
+
 $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_name, tt.topic_views,
     ft.forum_id, ft.forum_name 
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft
     WHERE tt.forum_id = ft.forum_id
+    AND tt.topic_time > $data_inid
     ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
 $result2 = $this->db->sql_query($sql2);
     $n2 = 0 ;
