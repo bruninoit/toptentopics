@@ -3,8 +3,8 @@
     "type": "phpbb-extension",
     "description": "Aggiunge un box nell'indice con ultimi topic, topic più visti e ultimi post",
     "homepage": "https://github.com/bruninoit/toptentopics",
-    "version": "0.1.0-RC1",
-    "time": "2014-12-01",
+    "version": "0.1.0-RC2",
+    "time": "2014-12-07",
     "license": "GPL-2.0",
     "authors": [
         {
