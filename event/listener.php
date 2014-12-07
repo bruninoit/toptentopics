@@ -128,8 +128,8 @@ $data_cor = time() ; // timestamp data corrente
 $data_6 = ($data_cor - 15811200) ;  // timestamp di 182 giorni fa
 $data_12 = ($data_cor - 31536000) ; // timestamp di 365 giorni fa
 
-$data_views = $_POST['sel_views'] ; // opzione selezionata
-
+//$data_views = $_POST['sel_views'] ; // opzione selezionata
+$data_views = request_var('sel_views', 0);
 // assegnazione dell'opzione scelta, per default è Tutto
 if ($data_views == '' || $data_views == '3')
 {
@@ -152,7 +152,7 @@ $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_
     ft.forum_id, ft.forum_name 
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft
     WHERE tt.forum_id = ft.forum_id
-    AND tt.topic_time > $data_inid
+    AND tt.topic_time > $data_ini
     ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
 $result2 = $this->db->sql_query($sql2);
     $n2 = 0 ;
