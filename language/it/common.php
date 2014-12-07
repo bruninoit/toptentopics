@@ -25,5 +25,6 @@ $lang = array_merge($lang, array(
 	'SIXMONTH' => 'ultimi 6 mesi',
 	'TWELVEMONTH' => 'ultimi 12 mesi',
 	'ONEMONTH' => 'ultimo mese',
-	'SIXMONTH' => 'ultimi 3 mesi',
+	'THREEMONTH' => 'ultimi 3 mesi',
+	'ALL_TOPICS' => 'Tutti'
 ));
