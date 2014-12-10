@@ -132,8 +132,18 @@ $data_1 = ($data_cor - 2635200) ;
 
 //$data_views = $_POST['sel_views'] ; // opzione selezionata
 $data_views = request_var('sel_views', 0);
+
+//predefinito da pca
+$data_predefinita=$this->config['toptentopics_data'];
+if($data_views == '')
+{
+$this->template->assign_var('TIME_SELECTED', '$data_predefinita');
+$data_views=$data_predefinita;
+}
+
+
 // assegnazione dell'opzione scelta, per default è Tutto
-if ($data_views == '' || $data_views == '3')
+if ($data_views == '3')
 {
 $this->template->assign_var('TIME_SELECTED', '3');
 $data_ini = '0' ;
