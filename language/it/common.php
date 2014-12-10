@@ -18,6 +18,7 @@ $lang = array_merge($lang, array(
 	'ACP_POSITION'		=> 'Scegli la posizione del box nell&apos;indice',
 	'ACP_GUEST'		=> 'Vuoi che sia mostrata agli utenti non registrati?',
 	'ACP_NUMBER'		=> 'Numero di topic e post estratti',
+	'ACP_DATA'		=> 'Periodo predefinito dei topic pi&ugrave; visti',
 	'BEFORE_FORUMLIST'		=> 'Prima della lista dei forum e del link "segna come gi&agrave; letti"',
 	'AFTER_FORUMLIST'		=> 'Dopo la lista dei forum',
 	'AFTER_MARKFORUM'		=> 'Prima della lista dei forum, ma dopo link "segna come gi&agrave; letti"',
