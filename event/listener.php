@@ -133,6 +133,9 @@ $data_1 = ($data_cor - 2635200) ;
 //$data_views = $_POST['sel_views'] ; // opzione selezionata
 $data_views = request_var('sel_views', 0);
 
+//evitare bug
+$data_ini = '0' ;
+
 //predefinito da pca
 $data_predefinita=$this->config['toptentopics_data'];
 if($data_views == '')
