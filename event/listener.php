@@ -51,16 +51,7 @@ $list_rec = $this->config['toptentopics_number'] + 15 ;   // numero di records d
 $list_view = $this->config['toptentopics_number'] ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
 
 //funzione taglia stringa
-function TagliaStringa($stringa, $max_char){
-        if(strlen($stringa)>$max_char){
-            $stringa_tagliata=substr($stringa, 0,$max_char);
-            $last_space=strrpos($stringa_tagliata," ");
-            $stringa_ok=substr($stringa_tagliata, 0,$last_space);
-            return $stringa_ok."...";
-        }else{
-            return $stringa;
-        }
-    }
+//tolta causa bug
     
     
 //funzione mesi
