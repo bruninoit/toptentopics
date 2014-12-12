@@ -161,30 +161,25 @@ $this->template->assign_var('TIME_SELECTED', '$data_predefinita');
 $data_views=$data_predefinita;
 }
 
-
+$this->template->assign_var('TIME_SELECTED', $data_views);
 if ($data_views == '3')
 {
-$this->template->assign_var('TIME_SELECTED', '3');
 $data_ini = '0' ;
 }
 if ($data_views == '1' )
 {
-$this->template->assign_var('TIME_SELECTED', '1');
 $data_ini = $data_6 ;
 }
 if ($data_views == '2')
 {
-$this->template->assign_var('TIME_SELECTED', '2');
 $data_ini = $data_12 ;
 }
 if ($data_views == '4')
 {
-$this->template->assign_var('TIME_SELECTED', '4');
 $data_ini = $data_3 ;
 }
 if ($data_views == '5')
 {
-$this->template->assign_var('TIME_SELECTED', '5');
 $data_ini = $data_1 ;
 }
 
