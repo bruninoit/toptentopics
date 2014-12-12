@@ -51,6 +51,13 @@ public function __construct(\phpbb\config\config $config, \phpbb\db\driver\drive
    $this->phpEx   = $phpEx ;
 }
 
+/** 
+ 	* Assign functions defined in this class to event listeners in the core 
+ 	* 
+ 	* @return array 
+ 	* @static 
+ 	* @access public 
+ 	*/ 
 static public function getSubscribedEvents()	
 {
 return array(			
@@ -58,28 +65,24 @@ return array(
 );	
 }	
 public function setup($event)	{	
-//file di lingua
+//language start
 $lang_set_ext = $event['lang_set_ext'];
 		$lang_set_ext[] = array(
 			'ext_name' => 'staffit/toptentopics',
 			'lang_set' => 'common',
 		);
 		$event['lang_set_ext'] = $lang_set_ext;
-//lingua end
+//language end
 
-//codice start
- // MOD Topten Topics : Topics più recenti, Topics più visti e Posts più recenti 
-// created by Micogian (Bingo)
-//estensione by Brunino e Carlo
-// configurazione: numero dei recods da visualizzare nella Lista
-$list_rec = $this->config['toptentopics_number'] + 15 ;   // numero di records da estrarre dalla tabella (alcuni topics potrebbero non aver il permesso di lettura)
-$list_view = $this->config['toptentopics_number'] ;  // sostituire il numero della variabile $lista se si desidera diminuire/aumentare il numero dei Topics 
+//code top ten topics start
+ // Top Ten Topics Extension
+// previous developer: Micogian (Bingo)
+// extension by Brunino and Carlo
+// number of topic
+$list_rec = $this->config['toptentopics_number'] + 15 ;   //number of limit query
+$list_view = $this->config['toptentopics_number'] 	 //number of topic show
 
-//funzione taglia stringa
-//tolta causa bug
-    
-    
-//funzione mesi
+//funzione month
 function mod_data($data_cor)
 {
 $data_cor = str_replace("Jan","gen", $data_cor);
@@ -98,7 +101,7 @@ return $data_cor;
 }
 
 
-//---------- 10 Topics più Recenti start -----------//
+//---------- New Topic start -----------//
 $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topic_moved_id, tt.topic_first_poster_name,
     ft.forum_id, ft.forum_name
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft 
@@ -135,9 +138,9 @@ $result1 = $this->db->sql_query($sql1);
             
         }
     }
-//---------- 10 Topics più Recenti end -----------//
+//---------- New Topics end -----------//
 
-//---------- 10 Topics più Visti start -----------//
+//---------- Top opics start -----------//
 
 // modifica Mod: inserisce la selezione del periodo di valutazione
 $data_cor = time() ; // timestamp data corrente
@@ -146,10 +149,8 @@ $data_12 = ($data_cor - 31536000) ; // timestamp di 365 giorni fa
 $data_3 = ($data_cor - 7905600) ;
 $data_1 = ($data_cor - 2635200) ;
 
-//$data_views = $_POST['sel_views'] ; // opzione selezionata
 $data_views = request_var('sel_views', 0);
 
-//evitare bug
 $data_ini = '0' ;
 
 //predefinito da pca
@@ -161,7 +162,6 @@ $data_views=$data_predefinita;
 }
 
 
-// assegnazione dell'opzione scelta, per default è Tutto
 if ($data_views == '3')
 {
 $this->template->assign_var('TIME_SELECTED', '3');
@@ -187,7 +187,6 @@ if ($data_views == '5')
 $this->template->assign_var('TIME_SELECTED', '5');
 $data_ini = $data_1 ;
 }
-// fine modifica Modifica periodo di valutazione
 
 $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_name, tt.topic_views,
     ft.forum_id, ft.forum_name 
@@ -222,9 +221,9 @@ $result2 = $this->db->sql_query($sql2);
 			}
 		}
 	}
-//---------- 10 Topics più visti end -----------//
+//---------- Top Tocics end -----------//
 
-//---------- 10 Ultimi posts start -----------//
+//---------- New posts start -----------//
 $sql4 = "SELECT tt.topic_id, tt.forum_id, tt.topic_moved_id, tt.topic_last_post_id, tt.topic_last_poster_id, tt.topic_last_poster_name, tt.topic_last_post_subject, tt.topic_last_post_time,
     ft.forum_id, ft.forum_name
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft 
@@ -260,15 +259,15 @@ $result4 = $this->db->sql_query($sql4);
 			}
         }
     }
-//---------- 10 Ultimi posts end -----------//
+//---------- New posts end -----------//
 
-//posizione top ten topic
+//position top ten topics
 $config_position=$this->config['toptentopics_position'];
 $config_guest=$this->config['toptentopics_guest'];
 $this->template->assign_var('POSITION', $config_position);
 $this->template->assign_var('TTT_GUEST', $config_guest);
 
-// Crea l'array "topten_list" che contiene le Variabili per il Template
+// array "topten_list" with template variables
 for ($x = 0; $x < $list_view; ++$x)
 {
  $this->template->assign_block_vars('topten_list',array(
@@ -293,6 +292,6 @@ for ($x = 0; $x < $list_view; ++$x)
 	'LAST_POST_AUTHOR'			=> $last_post_author[$x]
 	));
 }
-//codice end 
+//code top ten topics end 
 }
 }
