@@ -27,5 +27,6 @@ $lang = array_merge($lang, array(
 	'TWELVEMONTH' => 'ultimi 12 mesi',
 	'ONEMONTH' => 'ultimo mese',
 	'THREEMONTH' => 'ultimi 3 mesi',
-	'ALL_TOPICS' => 'Tutti'
+	'ALL_TOPICS' => 'Tutti',
+	'BASED' => 'basata sulla MOD di <a href="http://giannidose.altervista.org>Micogian</a>'
 ));
