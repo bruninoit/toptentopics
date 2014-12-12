@@ -8,18 +8,36 @@
 */ 
 namespace staffit\toptentopics\event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-class listener implements
-EventSubscriberInterface{
-protected $config;
-protected $db;
-//protected $table_prefix;
-//protected $request;
-//protected $search_engines;
-protected $template;
-protected $auth;
-protected $user;
-protected $root_path;
-protected $phpEx;
+class listener implements EventSubscriberInterface
+{
+	/** @var \phpbb\config\config */	
+	protected $config;
+	/** @var \phpbb\db\driver\driver_interface */
+	protected $db;
+	/** @var \phpbb\template\template */
+	protected $template;
+	/** @var \phpbb\auth\auth */
+	protected $auth;
+	/** @var \phpbb\user */
+	protected $user;
+
+	protected $root_path;
+	
+	protected $phpEx;
+
+/** 
+ 	* Constructor 
+ 	* 
+ 	* @param \phpbb\config\config   		$config             	 Config object 
+ 	* @param \phpbb\db\driver\driver_interface      $db        	 	 DB object 
+ 	* @param \phpbb\template\template    		$template  	 	 Template object 
+ 	* @param \phpbb\auth\auth      			$auth           	 Auth object 
+ 	* @param \phpbb\use		     		$user           	 User object 
+ 	* @param	                		$root_path          	 Root Path object 
+ 	* @param                  	     		$phpEx          	 phpEx object 
+ 	* @return \staffit\toptentopics\event\listener 
+ 	* @access public 
+ 	*/ 
 
 
 public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
