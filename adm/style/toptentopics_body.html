@@ -16,12 +16,18 @@
 			    
 			    </select>
 			    </dd>
+			    </dl>
+			    <dl>
 			<dt><label for="toptentopics">{L_ACP_NUMBER}</label></dt>
 			<dd><input type="text" class="text" name="toptentopics_number" value="{ACP_NUMBER}" /></dd>
 			<dt><label for="toptentopics">{L_ACP_GUEST}</label></dt>
 			<dd><input type="radio" class="radio" name="toptentopics_guest" value="1" <!-- IF ACP_GUEST -->checked="checked"<!-- ENDIF -->/>{L_YES} &nbsp;
 			    <input type="radio" class="radio" name="toptentopics_guest" value="0" <!-- IF not ACP_GUEST -->checked="checked"<!-- ENDIF -->/>{L_NO}</dd>
-	<dt><label for="toptentopics">{L_ACP_DATA}</label></dt>
+	</dl>
+	<dl>
+	<dt><label for="toptentopics">{L_ACP_DATA}</label>
+		
+	</dt>
 	<dd>
 			<select name="toptentopics_data">
 			    <option value="5"<!-- IF ACP_DATA eq '5' --> selected<!-- ENDIF --> /> {L_ONEMONTH}</option>
