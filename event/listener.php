@@ -80,7 +80,7 @@ $lang_set_ext = $event['lang_set_ext'];
 // extension by Brunino and Carlo
 // number of topic
 $list_rec = $this->config['toptentopics_number'] + 15 ;   //number of limit query
-$list_view = $this->config['toptentopics_number'] 	 //number of topic show
+$list_view = $this->config['toptentopics_number'];	 //number of topic show
 
 //funzione month
 function mod_data($data_cor)
