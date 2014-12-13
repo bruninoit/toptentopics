@@ -28,6 +28,7 @@ class main_module
 			$config->set('toptentopics_position', $request->variable('toptentopics_position', 0));
 			$config->set('toptentopics_guest', $request->variable('toptentopics_guest', 0));
 			$config->set('toptentopics_data', $request->variable('toptentopics_data', 0));
+			$config->set('toptentopics_important', $request->variable('toptentopics_important', 0));
 			trigger_error($user->lang('ACP_TTT_SAVED') . adm_back_link($this->u_action));
 		}
 		$template->assign_vars(array(
@@ -35,6 +36,7 @@ class main_module
 			'ACP_POSITION'				=> $config['toptentopics_position'],
 			'ACP_NUMBER'				=> $config['toptentopics_number'],
 			'ACP_GUEST'				=> $config['toptentopics_guest'],
+			'ACP_IMPORTANT'				=> $config['toptentopics_important'],
 			'ACP_DATA'				=> $config['toptentopics_data']
 		));
 	}
