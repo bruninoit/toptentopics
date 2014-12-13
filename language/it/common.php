@@ -35,5 +35,5 @@ $lang = array_merge($lang, array(
 	'ONEMONTH' => 'ultimo mese',
 	'THREEMONTH' => 'ultimi 3 mesi',
 	'ALL_TOPICS' => 'Tutti',
-	'BASED' => 'basata sulla MOD di <a href="http://giannidose.altervista.org>Micogian</a>'
+	'TTT_BASED' => 'basata sulla MOD di <a href="http://giannidose.altervista.org>Micogian</a>'
 ));
