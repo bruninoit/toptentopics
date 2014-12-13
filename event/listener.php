@@ -142,18 +142,12 @@ $result1 = $this->db->sql_query($sql1);
 
 //---------- Top opics start -----------//
 
-// modifica Mod: inserisce la selezione del periodo di valutazione
-$data_cor = time() ; // timestamp data corrente
-$data_6 = ($data_cor - 15811200) ;  // timestamp di 182 giorni fa
-$data_12 = ($data_cor - 31536000) ; // timestamp di 365 giorni fa
-$data_3 = ($data_cor - 7905600) ;
-$data_1 = ($data_cor - 2635200) ;
-
+//time start
+$data_cor = time() ; // timestamp now
 $data_views = request_var('sel_views', 0);
-
 $data_ini = '0' ;
 
-//predefinito da pca
+//from pca
 $data_predefinita=$this->config['toptentopics_data'];
 if($data_views == '')
 {
@@ -161,6 +155,7 @@ $this->template->assign_var('TIME_SELECTED', '$data_predefinita');
 $data_views=$data_predefinita;
 }
 
+//timestamp selected
 $this->template->assign_var('TIME_SELECTED', $data_views);
 if ($data_views == '3')
 {
@@ -168,20 +163,21 @@ $data_ini = '0' ;
 }
 if ($data_views == '1' )
 {
-$data_ini = $data_6 ;
+$data_ini = $data_cor - 15811200 ;
 }
 if ($data_views == '2')
 {
-$data_ini = $data_12 ;
+$data_ini = $data_cor - 31536000 ;
 }
 if ($data_views == '4')
 {
-$data_ini = $data_3 ;
+$data_ini = $data_cor - 7905600 ;
 }
 if ($data_views == '5')
 {
-$data_ini = $data_1 ;
+$data_ini = $data_cor - 2635200 ;
 }
+//time end
 
 $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_name, tt.topic_views,
     ft.forum_id, ft.forum_name 
