@@ -105,8 +105,8 @@ return $data_cor;
 $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topic_moved_id, tt.topic_first_poster_name,
     ft.forum_id, ft.forum_name
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft 
-    WHERE tt.topic_type = 0
-    AND tt.topic_moved_id = 0
+    WHERE tt.topic_moved_id = 0
+    AND tt.topic_type >= $this->config['toptentopics_important'];
     AND tt.forum_id = ft.forum_id
     AND tt.topic_visibility=1
     ORDER BY tt.topic_time DESC LIMIT 0,$list_rec";
