@@ -102,15 +102,17 @@ return $data_cor;
 
 
 //---------- New Topic start -----------//
+$forum_esclusi=$this->config['toptentopics_forum'];
 $topic_important=$this->config['toptentopics_important'];
 $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topic_moved_id, tt.topic_first_poster_name,
     ft.forum_id, ft.forum_name
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft 
     WHERE tt.topic_moved_id = 0
-    AND tt.topic_type >= $topic_important
+    AND tt.topic_type <= $topic_important
     AND tt.forum_id = ft.forum_id
-    AND tt.topic_visibility=1
-    ORDER BY tt.topic_time DESC LIMIT 0,$list_rec";
+    AND tt.topic_visibility=1";
+if($forum_esclusi) $sqli .= "AND NOT tt.forum_id=$forum_esclusi";
+$sqli1 .= "ORDER BY tt.topic_time DESC LIMIT 0,$list_rec";
 $result1 = $this->db->sql_query($sql1);
     $n1 = 0;
     while ($row1 = $this->db->sql_fetchrow($result1))
@@ -141,7 +143,7 @@ $result1 = $this->db->sql_query($sql1);
     }
 //---------- New Topics end -----------//
 
-//---------- Top opics start -----------//
+//---------- Top topics start -----------//
 
 //time start
 $data_cor = time() ; // timestamp now
@@ -185,8 +187,10 @@ $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft
     WHERE tt.forum_id = ft.forum_id
     AND tt.topic_time > $data_ini
-    AND tt.topic_moved_id = 0
-    ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
+    AND tt.topic_moved_id = 0";
+    if($forum_esclusi) $sql2 .= "AND NOT tt.forum_id=$forum_esclusi";
+    
+ $sql2 .= "ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
 $result2 = $this->db->sql_query($sql2);
     $n2 = 0 ;
     while ($row2 = $this->db->sql_fetchrow($result2))
@@ -222,8 +226,9 @@ $sql4 = "SELECT tt.topic_id, tt.forum_id, tt.topic_moved_id, tt.topic_last_post_
     WHERE tt.topic_type = 0
     AND tt.topic_moved_id = 0
     AND tt.forum_id = ft.forum_id
-    AND tt.topic_visibility=1
-    ORDER BY tt.topic_last_post_time DESC LIMIT 0,$list_rec";
+    AND tt.topic_visibility=1";
+   if($forum_esclusi) $sql4 .= "AND NOT tt.forum_id=$forum_esclusi";
+ $sql4 .= "ORDER BY tt.topic_last_post_time DESC LIMIT 0,$list_rec";
 $result4 = $this->db->sql_query($sql4);
     $n4 = 0;
     while ($row4 = $this->db->sql_fetchrow($result4))
