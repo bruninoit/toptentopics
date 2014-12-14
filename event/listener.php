@@ -111,7 +111,7 @@ $sql1 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_time, tt.topi
     AND tt.topic_type <= $topic_important
     AND tt.forum_id = ft.forum_id
     AND tt.topic_visibility=1";
-if($forum_esclusi) $sql1  .= " AND NOT tt.forum_id=$forum_esclusi";
+if($forum_esclusi) $sql1  .= " AND tt.forum_id NOT IN($forum_esclusi)";
 $sql1 .= " ORDER BY tt.topic_time DESC LIMIT 0,$list_rec";
 $result1 = $this->db->sql_query($sql1);
     $n1 = 0;
@@ -188,7 +188,7 @@ $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_
     WHERE tt.forum_id = ft.forum_id
     AND tt.topic_time > $data_ini
     AND tt.topic_moved_id = 0";
-    if($forum_esclusi) $sql2 .= " AND NOT tt.forum_id=$forum_esclusi";
+    if($forum_esclusi) $sql2 .= " AND tt.forum_id NOT IN($forum_esclusi)";
     
  $sql2 .= " ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
 $result2 = $this->db->sql_query($sql2);
@@ -227,7 +227,7 @@ $sql4 = "SELECT tt.topic_id, tt.forum_id, tt.topic_moved_id, tt.topic_last_post_
     AND tt.topic_moved_id = 0
     AND tt.forum_id = ft.forum_id
     AND tt.topic_visibility=1";
-   if($forum_esclusi) $sql4 .= " AND NOT tt.forum_id=$forum_esclusi";
+   if($forum_esclusi) $sql4 .= " AND tt.forum_id NOT IN($forum_esclusi)";
  $sql4 .= " ORDER BY tt.topic_last_post_time DESC LIMIT 0,$list_rec";
 $result4 = $this->db->sql_query($sql4);
     $n4 = 0;
