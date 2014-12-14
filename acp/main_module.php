@@ -24,7 +24,7 @@ class main_module
 			{
 				trigger_error('FORM_INVALID');
 			}
-			$config->set('toptenttopics_forum', $request->variable('toptentopics_forum', '', true))
+			$config->set('toptenttopics_forum', $request->variable('toptentopics_forum', '', true));
 			$config->set('toptentopics_number', $request->variable('toptentopics_number', 0));
 			$config->set('toptentopics_position', $request->variable('toptentopics_position', 0));
 			$config->set('toptentopics_guest', $request->variable('toptentopics_guest', 0));
