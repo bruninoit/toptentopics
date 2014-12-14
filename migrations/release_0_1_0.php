@@ -11,7 +11,7 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['toptentopics_guest']);
+		return isset($this->config['toptentopics_forum']);
 	}
 	static public function depends_on()
 	{
