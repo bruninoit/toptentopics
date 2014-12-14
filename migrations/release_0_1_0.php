@@ -25,6 +25,7 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 			array('config.add', array('toptentopics_number', 10)),
 			array('config.add', array('toptentopics_guest', 1)),
 			array('config.add', array('toptentopics_data', 3)),
+			array('config.add', array('toptentopics_forum', '')),
 			array('module.add', array(
 				'acp',
 				'ACP_CAT_DOT_MODS',
