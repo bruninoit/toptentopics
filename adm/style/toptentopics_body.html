@@ -39,11 +39,7 @@
 			    <option value="3"<!-- IF ACP_DATA eq '3' --> selected<!-- ENDIF --> /> {L_ALL_TOPICS}</option>
 			    </select>
 			    </dd>
-			    
-			    
-			    
-			   
-		</dl>
+			 </dl>
 		
 		<dl>
 			<dt><label for="toptentopics">{L_ACP_IMPORTANT}</label></dt>
@@ -57,7 +53,10 @@
 			    </select>
 			    </dd>
 			    </dl>
-		
+			<dl>
+			<dt><label for="toptentopics">{L_ACP_FORUM}</label></dt>
+			<dd><input name="toptentopics_forum" value="{ACP_FORUM}" class="text" /></dd>
+			</dl>
 		<p class="submit-buttons">
 			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
 			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
