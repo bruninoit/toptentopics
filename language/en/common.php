@@ -3,33 +3,31 @@ if (!defined('IN_PHPBB'))
 {
 	exit;
 }
-
 if (empty($lang) || !is_array($lang))
 {
 	$lang = array();
 }
-
 $lang = array_merge($lang, array(
 	'LAST_TOPICS'			=> 'Last Topics',
 	'LAST_POSTS'			=> 'Last Posts',
 	'TOP_TOPICS'			=> 'Top Topics',
 	'ACP_TTT_TITLE'			=> 'General Settings',
 	'ACP_TTT_CATEGORY'		=> 'Top Ten Topics',
-	'ACP_POSITION'		=> 'Position of extension&apos;s box',
-	'ACP_POSITION_DESC'	=> 'ATTENTION! If you want to use the position "After forum list but before login box", you must have a style updated to phpBB 3.1.1',
-	'ACP_GUEST'		=> 'Show box to guest',
-	'ACP_NUMBER'		=> 'Number of topic/post extracted',
-	'ACP_NUMBER_DESC'	=> 'If you insert a number of topic that a normal user cannot read, users have a page with error!',
+	'ACP_POSITION'		=> 'Position of extension\'s box',
+	'ACP_POSITION_DESC'	=> 'Note! If you want to use the position "After forums\'s list but before login box", you must have a style updated to phpBB 3.1.1',
+	'ACP_GUEST'		=> 'Show box to guests',
+	'ACP_NUMBER'		=> 'Number of extracted topics/posts',
+	'ACP_NUMBER_DESC'	=> 'If you enter a number of topics higher than an user can view, the page will generate an error',
 	'ACP_DATA'		=> 'Default time of top topics',
-	'ACP_IMPORTANT'		=> 'Topics&apos; type that you want to show',
-	'ACP_FORUM'		=> 'Forums that you don&apos;t want to show',
-	'ACP_FORUM_DESC'	=> 'You must insert the forum&apos;ID with comma but without spaces: for example 1,2,3<br />If you don&apos;t want to exclude any forum you mustn&apos;t insert any.',
-	'BEFORE_FORUMLIST'		=> 'Before forum list and before link "mark forum read"',
-	'AFTER_FORUMLIST'		=> 'After forum list and after login box',
+	'ACP_IMPORTANT'		=> 'Choose which types of topic to display',
+	'ACP_FORUM'		=> 'Choose which types of forum to display',
+	'ACP_FORUM_DESC'	=> 'You must enter the forum\'s ID to exclude, only separated by commas without spaces, for example 1,2,3 <br>If you don\'t want to exclude any forum leave this field empty. The extension doesn\'t show the topics to users where they don\'t have the necessary permissions..',
+	'BEFORE_FORUMLIST'		=> 'Before forums list and before link "mark forum read"',
+	'AFTER_FORUMLIST'		=> 'After forums list and after login box',
 	'AFTER_MARKFORUM'		=> 'Before forum list but after link "mark forum read"',
 	'BEFORE_LOGIN' 			=> 'After forum list but before login box',
 	'ALL_FOOTER'			=> 'On footer of all pages of forum',
-	'ACP_TTT_SAVED'			=> 'Settings of Top Ten Topics save',
+	'ACP_TTT_SAVED'			=> 'Settings of Top Ten Topics have been updated',
 	'SIXMONTH' => 'last 6 months',
 	'TWELVEMONTH' => 'last 12 months',
 	'ONEMONTH' => 'last month',
