@@ -47,4 +47,5 @@ $lang = array_merge($lang, array(
 	'TIMPORTANT' => 'Topic normali e importanti',
 	'TANNUNCE' => 'Topic normali, importanti e annunci',
 	'TGLOBAL' => 'Topic normali, importanti, annunci e annunci globali',
+	'TTT_BY' => 'di',
 ));
