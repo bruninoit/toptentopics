@@ -9,5 +9,6 @@ services:
             - @user
             - %core.root_path%
             - %core.php_ext%
+            - @request
         tags:
             - { name: event.listener }
