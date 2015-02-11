@@ -24,6 +24,8 @@ class listener implements EventSubscriberInterface
 	protected $root_path;
 	
 	protected $phpEx;
+	
+	protected $request;
 
 /** 
  	* Constructor 
@@ -35,12 +37,13 @@ class listener implements EventSubscriberInterface
  	* @param \phpbb\use		     		$user           	 User object 
  	* @param	                		$root_path          	 Root Path object 
  	* @param                  	     		$phpEx          	 phpEx object 
+ 	* @param \phpbb\request\request		     	$request          	 Request object 
  	* @return \staffit\toptentopics\event\listener 
  	* @access public 
  	*/ 
 
 
-public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx) 
+public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx, \phpbb\request\request $request) 
 {
    $this->config = $config;
    $this->db = $db;
@@ -49,6 +52,7 @@ public function __construct(\phpbb\config\config $config, \phpbb\db\driver\drive
    $this->user = $user;
    $this->root_path = $root_path;
    $this->phpEx   = $phpEx ;
+   $this->request   = $request ; 
 }
 
 /** 
@@ -147,7 +151,7 @@ $result1 = $this->db->sql_query($sql1);
 
 //time start
 $data_cor = time() ; // timestamp now
-$data_views = request_var('sel_views', 0);
+$data_views = $this->request->variable('sel_views', 0);
 $data_ini = '0' ;
 
 //from pca
