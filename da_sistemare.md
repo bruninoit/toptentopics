@@ -1,13 +1,3 @@
-[quote][quote="Raul [ThE KuKa]"][b]error.md[/b] and [b]README.md[/b] files, are not necessary (and are in Italian), delete please.
-
-In the [b]composer.json[/b] file (line 4):
-[code]    "description": "Aggiunge un box nell'indice con ultimi topic, topic più visti e ultimi post",[/code]
-Use English language in "description" please.
-Line 6:
-[code]    "version": "0.1.0-RC5",[/code]
-I'm not sure, but this is ther first revision, I think that the version should be [b]1.0.0[/b]
-Revision name: [b]Bug Fixed[/b] is not an "ideal" for the revision name, change please. ;) 
-
 In the [b]acp/main_info.php[/b] file (line 18):
 [code]			'version'	=> '0.1.0-b2',[/code]
 I think that the version should be [b]1.0.0[/b]
