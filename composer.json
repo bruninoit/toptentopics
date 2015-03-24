@@ -1,7 +1,7 @@
 {
     "name": "staffit/toptentopics",
     "type": "phpbb-extension",
-    "description": "Aggiunge un box nell'indice con ultimi topic, topic più visti e ultimi post",
+    "description": "Conversion of Micogian MOD who display a box with new topics, top topics and new post. In this extension there is also an ACP module. In this version it works perfectly.",
     "homepage": "https://github.com/bruninoit/toptentopics",
     "version": "1.0.0",
     "time": "2015-03-30",
