@@ -86,25 +86,6 @@ $lang_set_ext = $event['lang_set_ext'];
 $list_rec = $this->config['toptentopics_number'] + 15 ;   //number of limit query
 $list_view = $this->config['toptentopics_number'];	 //number of topic show
 
-//funzione month
-function mod_data($data_cor)
-{
-$data_cor = str_replace("Jan","gen", $data_cor);
-$data_cor = str_replace("Feb","feb", $data_cor);
-$data_cor = str_replace("Mar","mar", $data_cor);
-$data_cor = str_replace("Apr","apr", $data_cor);
-$data_cor = str_replace("May","mag", $data_cor);
-$data_cor = str_replace("Jun","giu", $data_cor);
-$data_cor = str_replace("Jul","lug", $data_cor);
-$data_cor = str_replace("Aug","ago", $data_cor);
-$data_cor = str_replace("Sep","set", $data_cor);
-$data_cor = str_replace("Oct","ott", $data_cor);
-$data_cor = str_replace("Nov","nov", $data_cor);
-$data_cor = str_replace('Dec','dic', $data_cor);
-return $data_cor;
-}
-
-
 //---------- New Topic start -----------//
 $forum_esclusi=$this->config['toptentopics_forum'];
 $topic_important=$this->config['toptentopics_important'];
@@ -136,8 +117,6 @@ $result1 = $this->db->sql_query($sql1);
 			$last_topic_title_short[$n1]  	= $topic_title1;
 			$last_topic_forum[$n1]  		= $row1['forum_name'];
             $last_topic_author[$n1] 		= $row1['topic_first_poster_name'];
-           // $last_topic_data[$n1]   		= $this->user->format_date($row1['topic_time'], "|d M|");
- $last_topic_data[$n1]   		= date("d/m",$row1['topic_time']); 
 			++$n1 ;          	
             }else{
 			break ;
@@ -248,8 +227,7 @@ $result4 = $this->db->sql_query($sql4);
 				}else{
 				$post_title = $post_subject ;
 				}
-			$last_post_link[$n4]		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "f=" . $row4['forum_id'] . "&amp;t=" . $row4['topic_id'] . "#p" . $row4['topic_last_post_id']);
-			//$last_post_link[$n4]   		= append_sid("{$phpbb_root_path}viewtopic.$phpEx", "f=" . $row4['forum_id'] . "&amp;t=" . $row4['topic_id'] . "p#" . $row4['topic_last_post_id']);
+			$last_post_link[$n4]		= append_sid("{$this->root_path}viewtopic.$this->phpEx", "p=" . $row4['topic_last_post_id'] . "#p" . $row4['topic_last_post_id']);
 			$last_post_title[$n4] 		= $row4['topic_last_post_subject'];
 			$last_post_title_short[$n4] = $post_title;
 			$last_post_forum[$n4]  		= $row4['forum_name'];
