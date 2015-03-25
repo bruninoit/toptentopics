@@ -250,25 +250,23 @@ $this->template->assign_var('TTT_GUEST', $config_guest);
 for ($x = 0; $x < $list_view; ++$x)
 {
  $this->template->assign_block_vars('topten_list',array(
-	'LAST_TOPIC_LINK'			=> $last_topic_link[$x],
-	'LAST_TOPIC_TITLE'			=> $last_topic_title[$x],
-	'LAST_TOPIC_TITLE_SHORT'	=> $last_topic_title_short[$x],
-	'LAST_TOPIC_FORUM'			=> $last_topic_forum[$x],
-	'LAST_TOPIC_AUTHOR'			=> $last_topic_author[$x],
-	'LAST_TOPIC_DATA'			=> $last_topic_data[$x],
-
-	'VIEW_TOPIC_LINK'			=> $view_topic_link[$x],
-	'VIEW_TOPIC_TITLE'			=> $view_topic_title[$x],
-	'VIEW_TOPIC_TITLE_SHORT'	=> $view_topic_title_short[$x],
-	'VIEW_TOPIC_FORUM'			=> $view_topic_forum[$x],
-	'VIEW_TOPIC_AUTHOR'			=> $view_topic_author[$x],
-	'VIEW_TOPIC_VIEWS'			=> $view_topic_views[$x],
-
-	'LAST_POST_LINK'			=> $last_post_link[$x],
-	'LAST_POST_TITLE'			=> $last_post_title[$x],
-	'LAST_POST_TITLE_SHORT'		=> $last_post_title_short[$x],
-	'LAST_POST_FORUM'			=> $last_post_forum[$x],
-	'LAST_POST_AUTHOR'			=> $last_post_author[$x]
+	'LAST_TOPIC_LINK'=> $last_topic_link[$x],
+	'LAST_TOPIC_TITLE'=> $last_topic_title[$x],
+	'LAST_TOPIC_TITLE_SHORT'=> $last_topic_title_short[$x],
+	'LAST_TOPIC_FORUM'=> $last_topic_forum[$x],
+	'LAST_TOPIC_AUTHOR'=> $last_topic_author[$x],
+	'LAST_TOPIC_DATA'=> $last_topic_data[$x],
+	'VIEW_TOPIC_LINK'=> $view_topic_link[$x],
+	'VIEW_TOPIC_TITLE'=> $view_topic_title[$x],
+	'VIEW_TOPIC_TITLE_SHORT'=> $view_topic_title_short[$x],
+	'VIEW_TOPIC_FORUM'=> $view_topic_forum[$x],
+	'VIEW_TOPIC_AUTHOR'=> $view_topic_author[$x],
+	'VIEW_TOPIC_VIEWS'=> $view_topic_views[$x],
+	'LAST_POST_LINK'=> $last_post_link[$x],
+	'LAST_POST_TITLE'=> $last_post_title[$x],
+	'LAST_POST_TITLE_SHORT'=> $last_post_title_short[$x],
+	'LAST_POST_FORUM'=> $last_post_forum[$x],
+	'LAST_POST_AUTHOR'=> $last_post_author[$x]
 	));
 }
 //code top ten topics end 
