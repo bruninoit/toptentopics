@@ -33,13 +33,13 @@ class main_module
 			trigger_error($user->lang('ACP_TTT_SAVED') . adm_back_link($this->u_action));
 		}
 		$template->assign_vars(array(
-			'U_ACTION'	=> $this->u_action,
-			'ACP_POSITION'	=> $config['toptentopics_position'],
-			'ACP_NUMBER'	=> $config['toptentopics_number'],
-			'ACP_GUEST'	=> $config['toptentopics_guest'],
-			'ACP_IMPORTANT'	=> $config['toptentopics_important'],
-			'ACP_DATA'	=> $config['toptentopics_data'],
-			'ACP_FORUM'	=> $config['toptentopics_forum']
+			'U_ACTION' => $this->u_action,
+			'ACP_POSITION'=> $config['toptentopics_position'],
+			'ACP_NUMBER'=> $config['toptentopics_number'],
+			'ACP_GUEST'=> $config['toptentopics_guest'],
+			'ACP_IMPORTANT'=> $config['toptentopics_important'],
+			'ACP_DATA'=> $config['toptentopics_data'],
+			'ACP_FORUM'=> $config['toptentopics_forum']
 		));
 	}
 }
