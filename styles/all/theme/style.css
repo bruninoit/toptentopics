@@ -1,6 +1,23 @@
-div#ttt_first {
+#ttt_first {
 width: 34%;
 }
-div#ttt_second {
+#ttt_second {
 width: 33%;
+}
+#ttt_select{
+font: 10px Verdana, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+background: #859D90;
+width: 150px;
+}
+#ttt_third {
+width: 34%;
+padding: 1px;
+}
+#ttt_fourth {
+width: 33%;
+padding: 1px;
+}
+#ttt_fifth {
+padding: 1px;
 }
