@@ -8,7 +8,7 @@
 					<form action="index.php" method="post">
                         <div>
                         &nbsp;{L_TOP_TOPICS}&nbsp;&nbsp;&nbsp;&nbsp;                        
-                            <select style="font: 10px Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF; background: #859D90; width: 150px;" name="sel_views" onchange='this.form.submit()'>
+                            <select id="ttt_select" name="sel_views" onchange='this.form.submit()'>
                             <!-- IF TIME_SELECTED == '5' --><option value='5' selected="selected"><!-- ELSE --><option value='5'><!-- ENDIF -->{L_ONEMONTH}</option>	
                             <!-- IF TIME_SELECTED == '4' --><option value='4' selected="selected"><!-- ELSE --><option value='4'><!-- ENDIF -->{L_THREEMONTH}</option>
                             <!-- IF TIME_SELECTED == '1' --><option value='1' selected="selected"><!-- ELSE --><option value='1'><!-- ENDIF -->{L_SIXMONTH}</option>
@@ -26,9 +26,9 @@
 		<!-- BEGIN topten_list -->
 			<li>
 				<dl>
-					<dd style="width: 34%; padding: 1px" class="responsive-hide">&nbsp;<a style="font-weight: bold" href="{topten_list.LAST_TOPIC_LINK}" title="{topten_list.LAST_TOPIC_TITLE} (in: {topten_list.LAST_TOPIC_FORUM})">{topten_list.LAST_TOPIC_TITLE_SHORT}</a> <span style="color: #708090">({L_TTT_BY} {topten_list.LAST_TOPIC_AUTHOR})</span></dd>
-					<dd style="width: 33%; padding: 1px" class="responsive-hide">{topten_list.VIEW_TOPIC_VIEWS} &nbsp;<a style="font-weight: bold" href="{topten_list.VIEW_TOPIC_LINK}" title="{topten_list.VIEW_TOPIC_TITLE} (in: {topten_list.VIEW_TOPIC_FORUM})">{topten_list.VIEW_TOPIC_TITLE_SHORT}</a> <span style="color: #708090">({L_TTT_BY} {topten_list.VIEW_TOPIC_AUTHOR})</span></dd>
-					<dd style="padding: 1px" class="responsive-show"><a style=" font-weight: bold" href="{topten_list.LAST_POST_LINK}" title="{topten_list.LAST_POST_TITLE} (in: {topten_list.LAST_POST_FORUM})">{topten_list.LAST_POST_TITLE_SHORT}</a> <span style="color: #708090">({L_TTT_BY} {topten_list.LAST_POST_AUTHOR})</span></dd>               
+					<dd id="ttt_third" class="responsive-hide">&nbsp;<a style="font-weight: bold" href="{topten_list.LAST_TOPIC_LINK}" title="{topten_list.LAST_TOPIC_TITLE} (in: {topten_list.LAST_TOPIC_FORUM})">{topten_list.LAST_TOPIC_TITLE_SHORT}</a> <span style="color: #708090">({L_TTT_BY} {topten_list.LAST_TOPIC_AUTHOR})</span></dd>
+					<dd id="ttt_fourth" class="responsive-hide">{topten_list.VIEW_TOPIC_VIEWS} &nbsp;<a style="font-weight: bold" href="{topten_list.VIEW_TOPIC_LINK}" title="{topten_list.VIEW_TOPIC_TITLE} (in: {topten_list.VIEW_TOPIC_FORUM})">{topten_list.VIEW_TOPIC_TITLE_SHORT}</a> <span style="color: #708090">({L_TTT_BY} {topten_list.VIEW_TOPIC_AUTHOR})</span></dd>
+					<dd id="ttt_fifth" class="responsive-show"><a style=" font-weight: bold" href="{topten_list.LAST_POST_LINK}" title="{topten_list.LAST_POST_TITLE} (in: {topten_list.LAST_POST_FORUM})">{topten_list.LAST_POST_TITLE_SHORT}</a> <span style="color: #708090">({L_TTT_BY} {topten_list.LAST_POST_AUTHOR})</span></dd>               
 				</dl>
 			</li>   
 		<!-- END topten_list -->
