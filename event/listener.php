@@ -41,8 +41,6 @@ class listener implements EventSubscriberInterface
  	* @return \staffit\toptentopics\event\listener 
  	* @access public 
  	*/ 
-
-
 public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\template\template $template, \phpbb\auth\auth $auth, \phpbb\user $user, $root_path, $phpEx, \phpbb\request\request $request) 
 {
    $this->config = $config;
@@ -54,7 +52,6 @@ public function __construct(\phpbb\config\config $config, \phpbb\db\driver\drive
    $this->phpEx   = $phpEx ;
    $this->request   = $request ; 
 }
-
 /** 
  	* Assign functions defined in this class to event listeners in the core 
  	* 
@@ -78,12 +75,9 @@ $lang_set_ext = $event['lang_set_ext'];
 		$event['lang_set_ext'] = $lang_set_ext;
 //language end
 
-//code top ten topics start
- // Top Ten Topics Extension
-// previous developer: Micogian (Bingo)
-// extension by Brunino and Carlo
+// Top Ten Topics start
 // number of topic
-$list_rec = $this->config['toptentopics_number'] + 15 ;   //number of limit query
+$list_rec = $this->config['toptentopics_number'] + 15;   //number of limit query
 $list_view = $this->config['toptentopics_number'];	 //number of topic show
 
 //---------- New Topic start -----------//
@@ -121,18 +115,15 @@ $result1 = $this->db->sql_query($sql1);
             }else{
 			break ;
 			}
-            
         }
     }
 //---------- New Topics end -----------//
 
 //---------- Top topics start -----------//
-
 //time start
-$data_cor = time() ; // timestamp now
+$data_cor = time();
 $data_views = $this->request->variable('sel_views', 0);
-$data_ini = '0' ;
-
+$data_ini = '0';
 //from pca
 $data_predefinita=$this->config['toptentopics_data'];
 if($data_views == '')
@@ -140,7 +131,6 @@ if($data_views == '')
 $this->template->assign_var('TIME_SELECTED', '$data_predefinita');
 $data_views=$data_predefinita;
 }
-
 //timestamp selected
 $this->template->assign_var('TIME_SELECTED', $data_views);
 if ($data_views == '3')
@@ -163,8 +153,7 @@ if ($data_views == '5')
 {
 $data_ini = $data_cor - 2635200 ;
 }
-//time end
-
+//query
 $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_name, tt.topic_views,
     ft.forum_id, ft.forum_name 
     FROM " . TOPICS_TABLE . " tt, " . FORUMS_TABLE . " ft
@@ -172,8 +161,7 @@ $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_
     AND tt.topic_time > $data_ini
     AND tt.topic_moved_id = 0";
     if($forum_esclusi) $sql2 .= " AND tt.forum_id NOT IN($forum_esclusi)";
-    
- $sql2 .= " ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
+$sql2 .= " ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
 $result2 = $this->db->sql_query($sql2);
     $n2 = 0 ;
     while ($row2 = $this->db->sql_fetchrow($result2))
@@ -239,13 +227,11 @@ $result4 = $this->db->sql_query($sql4);
         }
     }
 //---------- New posts end -----------//
-
 //position top ten topics
 $config_position=$this->config['toptentopics_position'];
 $config_guest=$this->config['toptentopics_guest'];
 $this->template->assign_var('POSITION', $config_position);
 $this->template->assign_var('TTT_GUEST', $config_guest);
-
 // array "topten_list" with template variables
 for ($x = 0; $x < $list_view; ++$x)
 {
@@ -269,6 +255,6 @@ for ($x = 0; $x < $list_view; ++$x)
 	'LAST_POST_AUTHOR'=> $last_post_author[$x]
 	));
 }
-//code top ten topics end 
+//Top Ten Topics end 
 }
 }
