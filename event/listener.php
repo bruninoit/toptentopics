@@ -160,7 +160,7 @@ $sql2 = "SELECT tt.topic_id, tt.forum_id, tt.topic_title, tt.topic_first_poster_
     WHERE tt.forum_id = ft.forum_id
     AND tt.topic_time > $data_ini
     AND tt.topic_moved_id = 0";
-    if($forum_esclusi) $sql2 .= " AND NOT "$db->sql_in_set('tt.forum_id', array($forum_esclusi));
+    if($forum_esclusi) $sql2 .= " AND NOT " . $this->db->sql_in_set('tt.forum_id', array($forum_esclusi));
 $sql2 .= " ORDER BY tt.topic_views DESC LIMIT 0,$list_rec";
 $result2 = $this->db->sql_query($sql2);
     $n2 = 0 ;
