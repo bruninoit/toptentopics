@@ -3,8 +3,8 @@
     "type": "phpbb-extension",
     "description": "Conversion of Micogian MOD who display a box with new topics, top topics and new post. In this extension there is also an ACP module. In this version it works perfectly.",
     "homepage": "https://github.com/bruninoit/toptentopics",
-    "version": "1.0.0",
-    "time": "2015-03-30",
+    "version": "0.1.0-RC6",
+    "time": "2015-06-15",
     "license": "GPL-2.0",
     "authors": [
         {
