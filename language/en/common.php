@@ -38,5 +38,4 @@ $lang = array_merge($lang, array(
 	'TIMPORTANT' => 'Normal and important topics',
 	'TANNUNCE' => 'Normal, important and sticky topics',
 	'TGLOBAL' => 'Normal, important, sticky and global sticky topics',
-	'TTT_BY' => 'by',
 ));
