@@ -10,7 +10,7 @@
         {
             "name": "brunino",
             "email": "brunino@altervista.org",
-            "homepage": "http://www.brunino.altervista.org",
+            "homepage": "http://www.phpbbrevolution.6te.net",
             "role": "Developer"
         },
         {
@@ -41,9 +41,9 @@
              "phpbb/phpbb": "3.1.*@dev"
         },
         "version-check": {
-            "host": "brunino.altervista.org",
-            "directory": "/version/",
-            "filename": "toptentopics.json"
+            "host": "phpbbrevolution.6te.net",
+            "directory": "/download/",
+            "filename": "version.php/toptentopics"
         }
     }
 }
