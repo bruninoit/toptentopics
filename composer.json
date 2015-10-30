@@ -18,7 +18,7 @@
             "email": "giannidose@tin.it",
             "homepage": "http://www.actafungorum.org/actaforum/",
             "role": "Previous Developer and Helper"
-        }
+        },
         {
             "name": "Sir Xiradorn",
             "email": "",
@@ -30,7 +30,7 @@
             "email": "carlo@phpbbitalia.net",
             "homepage": "http://www.phpbbitalia.net",
             "role": "Coding Helper"
-        }, 
+        }
     ],
     "require": {
         "php": ">=5.3"
@@ -38,7 +38,7 @@
     "extra": {
         "display-name": "Top Ten Topics",
         "soft-require": {
-             "phpbb/phpbb": "3.1.*@dev"
+            "phpbb/phpbb": "3.1.*@dev"
         },
         "version-check": {
             "host": "phpbbrevolution.6te.net",
