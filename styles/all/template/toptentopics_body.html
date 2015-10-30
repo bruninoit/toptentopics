@@ -1,37 +1,57 @@
-<div class="forabg">
+<div class="forabg xttt-row_top_ten xttt-row_colored">
 	<div class="inner"><span class="corners-top"><span></span></span>
 		<ul class="topiclist">
 			<li class="header">
 				<dl class="icon">
-					<dd id="ttt_first" class="responsive-hide">&nbsp;{L_LAST_TOPICS}</dd>
-					<dd id="ttt_second" class="responsive-hide">
-					<form action="index.php" method="post">
-                        <div>
-                        &nbsp;{L_TOP_TOPICS}&nbsp;&nbsp;&nbsp;&nbsp;                        
-                            <select id="ttt_select" name="sel_views" onchange='this.form.submit()'>
-                            <!-- IF TIME_SELECTED == '5' --><option value='5' selected="selected"><!-- ELSE --><option value='5'><!-- ENDIF -->{L_ONEMONTH}</option>	
-                            <!-- IF TIME_SELECTED == '4' --><option value='4' selected="selected"><!-- ELSE --><option value='4'><!-- ENDIF -->{L_THREEMONTH}</option>
-                            <!-- IF TIME_SELECTED == '1' --><option value='1' selected="selected"><!-- ELSE --><option value='1'><!-- ENDIF -->{L_SIXMONTH}</option>
-                            <!-- IF TIME_SELECTED == '2' --><option value='2' selected="selected"><!-- ELSE --><option value='2'><!-- ENDIF -->{L_TWELVEMONTH}</option>
-                            <!-- IF TIME_SELECTED == '3' --><option value='3' selected="selected"><!-- ELSE --><option value='3'><!-- ENDIF -->{L_ALL_TOPICS}</option>
-                            </select>
-                        </div>
-                    </form>
-					</dd>
-					<dd>&nbsp;{L_LAST_POSTS}</dd>
+					<dt class="xttt-one_third"><div class="list-inner">{L_TOP_TOPICS}</div></dt>
+					<dd class="xttt-one_third">{L_LAST_TOPICS}</dd>
+					<dd class="xttt-one_third xttt-one_third_last">{L_LAST_POSTS}</dd>
 				</dl>
 			</li>
 		</ul>
 		<ul  class="topiclist forums" >
-		<!-- BEGIN topten_list -->
-			<li>
+			<!-- BEGIN topten_list -->
+			<li class="row">
 				<dl>
-					<dd id="ttt_third" class="responsive-hide">&nbsp;<a style="font-weight: bold" href="{topten_list.LAST_TOPIC_LINK}" title="{topten_list.LAST_TOPIC_TITLE} ({L_IN}{L_COLON} {topten_list.LAST_TOPIC_FORUM})">{topten_list.LAST_TOPIC_TITLE_SHORT}</a> <span style="color: #708090">({L_POST_BY_AUTHOR} {topten_list.LAST_TOPIC_AUTHOR})</span></dd>
-					<dd id="ttt_fourth" class="responsive-hide">{topten_list.VIEW_TOPIC_VIEWS} &nbsp;<a style="font-weight: bold" href="{topten_list.VIEW_TOPIC_LINK}" title="{topten_list.VIEW_TOPIC_TITLE} ({L_IN}{L_COLON} {topten_list.VIEW_TOPIC_FORUM})">{topten_list.VIEW_TOPIC_TITLE_SHORT}</a> <span style="color: #708090">({L_POST_BY_AUTHOR} {topten_list.VIEW_TOPIC_AUTHOR})</span></dd>
-					<dd id="ttt_fifth" class="responsive-show"><a style=" font-weight: bold" href="{topten_list.LAST_POST_LINK}" title="{topten_list.LAST_POST_TITLE} ({L_IN}{L_COLON} {topten_list.LAST_POST_FORUM})">{topten_list.LAST_POST_TITLE_SHORT}</a> <span style="color: #708090">({L_POST_BY_AUTHOR} {topten_list.LAST_POST_AUTHOR})</span></dd>               
+					<dt class="responsive-show xttt-one_third">
+						<a class="topictitle subforum read" href="{topten_list.VIEW_TOPIC_LINK}" title="{topten_list.VIEW_TOPIC_TITLE} ({L_IN}{L_COLON} {topten_list.VIEW_TOPIC_FORUM})">{topten_list.VIEW_TOPIC_VIEWS} - {topten_list.VIEW_TOPIC_TITLE_SHORT}</a>
+						<span>({L_POST_BY_AUTHOR} {topten_list.VIEW_TOPIC_AUTHOR})</span>
+					</dt>
+
+					<dd class="responsive-hide xttt-one_third"> 
+						<a class="topictitle subforum read" href="{topten_list.LAST_TOPIC_LINK}" title="{topten_list.LAST_TOPIC_TITLE} ({L_IN}{L_COLON} {topten_list.LAST_TOPIC_FORUM})">{topten_list.LAST_TOPIC_TITLE_SHORT}</a>
+						<span>({L_POST_BY_AUTHOR} {topten_list.LAST_TOPIC_AUTHOR})</span>
+					</dd>
+
+					<dd class="responsive-hide xttt-one_third xttt-one_third_last">
+						<a class="topictitle subforum read" href="{topten_list.LAST_POST_LINK}" title="{topten_list.LAST_POST_TITLE} ({L_IN}{L_COLON} {topten_list.LAST_POST_FORUM})">{topten_list.LAST_POST_TITLE_SHORT}</a>
+						<span>({L_POST_BY_AUTHOR} {topten_list.LAST_POST_AUTHOR})</span>
+					</dd>               
 				</dl>
 			</li>   
-		<!-- END topten_list -->
+			<!-- END topten_list -->
+			<li class="row xcopyright">
+				<dl>
+					<dt class="xttt-full_third">
+						<em>{L_TTT_COPYRIGHT}</em>
+					</dt>
+				</dl>
+			</li>
 		</ul>
-	<span class="corners-bottom"><span></span></span></div>
-</div>
+		<ul class="topiclist topiclist-footer">
+			<li>
+				<form action="index.php" method="post">
+					<div>
+						<select class="xttt_select" name="sel_views" onchange='this.form.submit()'>
+							<!-- IF TIME_SELECTED == '5' --><option value='5' selected="selected"><!-- ELSE --><option value='5'><!-- ENDIF -->{L_ONEMONTH}</option>	
+							<!-- IF TIME_SELECTED == '4' --><option value='4' selected="selected"><!-- ELSE --><option value='4'><!-- ENDIF -->{L_THREEMONTH}</option>
+							<!-- IF TIME_SELECTED == '1' --><option value='1' selected="selected"><!-- ELSE --><option value='1'><!-- ENDIF -->{L_SIXMONTH}</option>
+							<!-- IF TIME_SELECTED == '2' --><option value='2' selected="selected"><!-- ELSE --><option value='2'><!-- ENDIF -->{L_TWELVEMONTH}</option>
+							<!-- IF TIME_SELECTED == '3' --><option value='3' selected="selected"><!-- ELSE --><option value='3'><!-- ENDIF -->{L_ALL_TOPICS}</option>
+						</select>
+					</div>
+				</form>
+			</li>
+		</ul>
+		<span class="corners-bottom"><span></span></span></div>
+	</div>

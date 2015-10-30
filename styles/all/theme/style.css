@@ -1,23 +1,85 @@
-#ttt_first {
-width: 34%;
+/*!* Style for Top Ten Topics **/
+/*!* @autor: Sir Xiradorn for Top Ten Topic **/
+
+.xttt-row_colored {
+	/*background-image: none;*/
+	/*background-color: #900627;*/
+	/*background-color: #D63226;*/
+	background-color: #0178B3;
+	/*background-color: #336;*/
 }
-#ttt_second {
-width: 33%;
+
+.xttt-row_top_ten dt.xttt-one_third,
+.xttt-row_top_ten dd.xttt-one_third {
+	width: 32.33333%;
+	padding: 0 .7%;
 }
-#ttt_select{
-font: 10px Verdana, Arial, Helvetica, sans-serif;
-color: #FFFFFF;
-background: #859D90;
-width: 150px;
+
+.xttt-row_top_ten .header dt.xttt-one_third,
+.xttt-row_top_ten .header dd.xttt-one_third {
+	padding: 2px 1%;	
 }
-#ttt_third {
-width: 34%;
-padding: 1px;
+
+.xttt-full_third {
+	width: 100%;
+	padding: 0;
 }
-#ttt_fourth {
-width: 33%;
-padding: 1px;
+
+.xttt-row_top_ten dt.xttt-one_third {
+	margin-right: 0;
 }
-#ttt_fifth {
-padding: 1px;
+
+.xttt-row_top_ten dt.xttt-one_third .list-inner {
+	margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+	.xttt-row_top_ten dt.xttt-one_third {
+		width: 100%;
+	}
+}
+
+.xttt-row_top_ten .row {
+	font-size: 1em;
+}
+
+.xttt_select {
+	color: #336;
+	background: #fff;
+	width: 33.3333%;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.xttt-row_top_ten .topiclist-footer li {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.xttt-row_top_ten ul.topiclist li.xcopyright, .xttt-row_top_ten ul.topiclist li.xcopyright:hover {
+	text-align: center;
+	background: #CADCEB;
+	font-weight: bold;
+}
+
+.xttt-row_top_ten ul.topiclist li.row dt a.subforum.read,
+.xttt-row_top_ten ul.topiclist li.row dd a.subforum.read {
+	background-image: url('images/subforum_read.gif');
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding: 0 3px 0 20px;
+	position: relative;
+	white-space: normal;
+}
+
+/* Fix for first column text */
+.xttt-row_top_ten ul.topiclist li dt a {
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 700px) {
+	.xttt-row_top_ten ul.topiclist li.row dt a.subforum.read,
+	.xttt-row_top_ten ul.topiclist li.row dd a.subforum.read {
+		white-space: nowrap;
+	}
 }
