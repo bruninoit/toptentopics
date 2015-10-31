@@ -83,3 +83,8 @@
 		white-space: nowrap;
 	}
 }
+
+.xttt-row_top_ten a.topictitle.subforum.read {
+	max-width: 100%;
+	text-overflow: ellipsis;
+}
