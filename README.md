@@ -5,7 +5,11 @@ Extensione per phpBB 3.1 per mostrare gi ultimi argomenti, post e gli argomenti 
 Un menu permette poi di fare un filtraggio dei contenuti.  
 *Questa Estensione è il porting della MOD creata da Micogian*
 
-![Screen](screen1.jpg)
+![Desktop Version](screen1.jpg)  
+`Desktop Version`
+
+![Mobile Version](screen2.jpg)  
+`Mobile Version`
 
 ##### Basata sulla mod creata da Micogian per phpBB 3.0.X
   
