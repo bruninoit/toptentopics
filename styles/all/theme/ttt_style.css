@@ -38,6 +38,14 @@
 	.xttt-row_top_ten dd.xttt-one_third {
 		width: 100%;
 	}
+
+	.xttt-row_top_ten .header dt.xttt-one_third,
+	.xttt-row_top_ten .header dd.xttt-one_third {
+		text-align: center;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 1.1em;
+	}
 }
 
 .xttt-row_top_ten .row {
