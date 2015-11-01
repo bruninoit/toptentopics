@@ -103,13 +103,17 @@
 	text-align: center;
 }
 
-.xttt_filters a {
+.xttt_filters a, .xttt_filters a:link, .xttt_filters a:visited {
 	display: inline-block;
-	padding: 2px 6px;
+	padding: 2px 5px;
 	background: #0178B3;
 	color: #fff;
 	border: 1px solid #fff;
-	border-radius: 6px;
+	border-radius: 3px;
+}
+
+.xttt_filters a:hover {
+	background-color: #D31141;
 }
 
 /* Only in mobile */
