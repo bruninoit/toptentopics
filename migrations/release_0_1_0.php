@@ -41,4 +41,28 @@ class release_0_1_0 extends \phpbb\db\migration\migration
 			)),
 		);
 	}
+	public function revert_data()
+	{
+		return array(
+			array('config.remove', array('toptentopics_position')),
+			array('config.remove', array('toptentopics_important')),
+			array('config.remove', array('toptentopics_number')),
+			array('config.remove', array('toptentopics_guest')),
+			array('config.remove', array('toptentopics_data')),
+			array('config.remove', array('toptentopics_forum')),
+			array('module.remove', array(
+				'acp',
+				'ACP_CAT_DOT_MODS',
+				'ACP_TTT_CATEGORY'
+			)),
+			array('module.remove', array(
+				'acp',
+				'ACP_TTT_CATEGORY',
+				array(
+					'module_basename'	=> '\staffit\toptentopics\acp\main_module',
+					'modes'			=> array('settings')
+				),
+			)),
+		);
+	}
 }
